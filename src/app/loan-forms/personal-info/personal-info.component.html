@@ -1,0 +1,244 @@
+<br>
+<nav class="navbar  navbar-light bg-light  container" id="top">
+  <div style=" margin-left: 20px">
+      <a class="navbar-brand" href="#home"> <img src="assets/img/loan.svg" style="height:70px;"><span><h4>Fast Loan</h4></span></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarColor04">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Loan Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a [class.d-none]="user" class="nav-link" href="#" routerLink="/admin">Dashboard</a>
+      </li>
+    </ul>
+    <div class="btn-group dropright">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/profile"><span><i class="fas fa-users"></i></span> Profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" (click)="logOut()" > <span><i class="fas fa-sign-out-alt"></i></span>Log Out</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="container">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="bg-white pinside30">
+                   
+                        <div class="row">
+                           <div class="col-xl-4 col-lg-4 col-md-9 col-sm-12 col-12">
+                                <h1 class="page-title">Personal Information</h1>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+ </div>
+<br>
+<br>
+     <!-- content start -->
+ <form #personalInfoForm="ngForm" (ngSubmit)="onSubmit()" >
+    <!-- {{personalInfoForm.value | json}} -->
+   <div class="form-row">
+ 
+     <div class="form-group col-md-6">
+       <label for="firstName" >First Name :</label>
+       <input type="text" required #FirstName="ngModel" class="form-control" placeholder="First Name" name="FirstName"
+       [(ngModel)]="persoanlInfoModel.FirstName" [class.is-invalid]="FirstName.invalid && FirstName.touched">
+       <small class="text-danger" [class.d-none]="FirstName.valid || FirstName.untouched">*First Name is required</small>
+     </div>
+     <div class="form-group col-md-6">
+       <label for="lastName" >Last Name: </label>
+       <input type="text" required #LastName="ngModel" class="form-control" placeholder="Last Name" name="LastName"
+       [(ngModel)]="persoanlInfoModel.LastName" [class.is-invalid]="LastName.invalid && LastName.touched">
+       <small class="text-danger" [class.d-none]="LastName.valid || LastName.untouched">*Last Name is required</small>
+     </div>
+   </div>
+   <br>
+   <div class="form-row">
+     <div class="form-group col-md-6">
+       <label for="fatherName" >Father's Name: </label>
+       <input type="text" required #FathersName="ngModel" class="form-control" placeholder="Father's Name" name="FathersName"
+       [(ngModel)]="persoanlInfoModel.FathersName" [class.is-invalid]="FathersName.invalid && FathersName.touched">
+       <small class="text-danger" [class.d-none]="FathersName.valid || FathersName.untouched">*Father's Name is required</small>
+     </div>
+     <div class="form-group col-md-6">
+       <label for="motherName" >Mother's Name: </label>
+       <input type="text" required #MothersName="ngModel" class="form-control" placeholder="Mother's Name" name="MothersName"
+       [(ngModel)]="persoanlInfoModel.MothersName" [class.is-invalid]="MothersName.invalid && MothersName.touched">
+       <small class="text-danger" [class.d-none]="MothersName.valid || MothersName.untouched">*Mother's Name is required</small>
+     </div>
+   </div>
+   <br>
+ 
+   <div class="form-row">
+    <div class="form-group col-md-12">
+       <label for="prAddress" >Present Address:</label>
+       <input type="text" required #PresentAddress="ngModel" class="form-control" placeholder="Present Address" name="PresentAddress"
+       [(ngModel)]="persoanlInfoModel.PresentAddress" [class.is-invalid]="PresentAddress.invalid && PresentAddress.touched">
+       <small class="text-danger" [class.d-none]="PresentAddress.valid || PresentAddress.untouched">*Present Address is required</small>
+     </div>
+   </div>
+   <br>
+ 
+   <div class="form-row">
+       <div class="form-group col-md-12">
+          <label for="peAddress" >Permanent Address:</label>
+          <input type="text" required #PermanentAddress="ngModel" class="form-control" placeholder="Permanent Address" name="PermanentAddress"
+       [(ngModel)]="persoanlInfoModel.PermanentAddress" [class.is-invalid]="PermanentAddress.invalid && PermanentAddress.touched">
+       <small class="text-danger" [class.d-none]="PermanentAddress.valid || PermanentAddress.untouched">*Permanent Address is required</small>
+        </div>
+      </div>
+      <br>
+     
+ 
+      <div class="form-row">
+         <div class="col-md-4 mb-4">
+           <label for="validationTooltip04" >City :</label>
+           <input type="text" required #City="ngModel" class="form-control" placeholder="City" name="City"
+       [(ngModel)]="persoanlInfoModel.City" [class.is-invalid]="City.invalid && City.touched">
+       <small class="text-danger" [class.d-none]="City.valid || City.untouched">*City is required</small>
+           
+         </div>
+         <div class="col-md-4 mb-4">
+           <label for="validationTooltip04" >State :</label>
+           <input type="text" required #State="ngModel" class="form-control" placeholder="State" name="State"
+       [(ngModel)]="persoanlInfoModel.State" [class.is-invalid]="State.invalid && State.touched">
+       <small class="text-danger" [class.d-none]="State.valid || State.untouched">*State is required</small>
+           
+         </div>
+
+         <div class="col-md-4 mb-4">
+           <label for="validationTooltip06" >Zip Code :</label>
+           <input type="text" required #ZipCode="ngModel" class="form-control" placeholder="Zip Code" name="ZipCode"
+       [(ngModel)]="persoanlInfoModel.ZipCode" [class.is-invalid]="ZipCode.invalid && ZipCode.touched">
+       <small class="text-danger" [class.d-none]="ZipCode.valid || ZipCode.untouched">*Zip Code is required</small>
+         </div>
+       </div>
+       <br>
+ 
+ 
+       <div class="form-row">
+ 
+           <div class="form-group col-md-4 mb-4">
+             <label for="country">Country : </label>
+             <input type="text" required #Country="ngModel" class="form-control" placeholder="Country" name="Country"
+       [(ngModel)]="persoanlInfoModel.Country" [class.is-invalid]="Country.invalid && Country.touched">
+       <small class="text-danger" [class.d-none]="Country.valid || Country.untouched">*Country is required</small>
+           </div>
+           <div class="form-group col-md-4 mb-4">
+             <label for="nationality" >Nationality : </label>
+             <input type="text" required #Nationality="ngModel" class="form-control" placeholder="Nationality" name="Nationality"
+       [(ngModel)]="persoanlInfoModel.Nationality" [class.is-invalid]="Nationality.invalid && Nationality.touched">
+       <small class="text-danger" [class.d-none]="Nationality.valid || Nationality.untouched">*Nationality is required</small>
+           </div>
+           <div class="form-group col-md-4 mb-4">
+               <label for="occupation" >Occupation : </label>
+               <input type="text" required #Occupation="ngModel" class="form-control" placeholder="Occupation" name="Occupation"
+       [(ngModel)]="persoanlInfoModel.Occupation" [class.is-invalid]="Occupation.invalid && Occupation.touched">
+       <small class="text-danger" [class.d-none]="Occupation.valid || Occupation.untouched">*Occupation is required</small>
+             </div>
+         </div>
+
+         <br>
+ 
+       <div class="form-row">
+           <div class="col-md-4 mb-4">
+               <label for="date" >Date of Birth :</label>
+               <input type="date" required #DateOfBirth="ngModel" class="form-control" placeholder="Date Of Birth" name="DateOfBirth"
+       [(ngModel)]="persoanlInfoModel.DateOfBirth" [class.is-invalid]="DateOfBirth.invalid && DateOfBirth.touched">
+       <small class="text-danger" [class.d-none]="DateOfBirth.valid || DateOfBirth.untouched">*Date Of Birth is required</small>
+           </div> 
+
+           <div class="form-group col-md-4 mb-4">
+               <label for="gender" >Gender :</label>
+
+        <select (blur)="validateGender(Gender.value)" (change)="validateGender(Gender.value)"  #Gender="ngModel" 
+        [class.is-invalid]="genderHasError && Gender.touched" class="form-control" style="height:52px" name="Gender"
+        [(ngModel)]="persoanlInfoModel.Gender">
+        <option value='default'>Select Gender</option>
+        <option *ngFor="let types of genderTypes">{{types}}</option>
+        
+    </select>
+    <small class="text-danger" [class.d-none]="!genderHasError || Gender.untouched">*Please Select Gender</small>
+           </div>
+           
+           <div class="col-md-4 mb-4">
+               <label for="religion" >Religion :</label>
+               <input type="text" required #Religion="ngModel" class="form-control" placeholder="Religion" name="Religion"
+       [(ngModel)]="persoanlInfoModel.Religion" [class.is-invalid]="Religion.invalid && Religion.touched">
+       <small class="text-danger" [class.d-none]="Religion.valid || Religion.untouched">*Religion is required</small>
+           </div> 
+       </div>
+
+       <br>
+ 
+ 
+       <div class="form-row">
+ 
+           <div class="form-group col-md-6">
+             <label for="mobile" >Mobile No: </label>
+             <input type="text" required #MobileNo="ngModel" class="form-control" placeholder="Mobile No" name="MobileNo"
+       [(ngModel)]="persoanlInfoModel.MobileNo" [class.is-invalid]="MobileNo.invalid && MobileNo.touched">
+       <small class="text-danger" [class.d-none]="MobileNo.valid || MobileNo.untouched">*Mobile No is required</small>
+           </div>
+           <div class="form-group col-md-6">
+             <label for="email" >Email : </label>
+             <input type="text" required #Email="ngModel" class="form-control" placeholder="Email" name="Email"
+       [(ngModel)]="persoanlInfoModel.Email" [class.is-invalid]="Email.invalid && Email.touched">
+       <small class="text-danger" [class.d-none]="Email.valid || Email.untouched">*Email is required</small>
+           </div>
+         </div>
+
+         <br>
+ 
+         <div class="form-row">
+             <div class="form-group col-md-6 mb-4">
+                 <label for="vit" >Verification Id Type :</label>
+                 <select (blur)="validateVerification(Verification.value)" (change)="validateVerification(Verification.value)"  #Verification="ngModel" 
+                 [class.is-invalid]="verificationHasError && Verification.touched" class="form-control" style="height:52px" name="Verification"
+                 [(ngModel)]="persoanlInfoModel.VerificationIdType">
+                 <option value='default'>Select Verification Id Type</option>
+                 <option *ngFor="let types of verificationTypes">{{types}}</option>
+                 
+             </select>
+             <small class="text-danger" [class.d-none]="!verificationHasError || Verification.untouched">*Please Select Verification Id Types</small>
+             </div>
+             <div class="form-group col-md-6">
+               <label for="vin" >Verification Id No :</label>
+               <input type="text" required #VerificationIdNo="ngModel" class="form-control" placeholder="Verification Id No" name="VerificationIdNo"
+       [(ngModel)]="persoanlInfoModel.VerificationIdNo" [class.is-invalid]="VerificationIdNo.invalid && VerificationIdNo.touched">
+       <small class="text-danger" [class.d-none]="VerificationIdNo.valid || VerificationIdNo.untouched">*Verification Id No is required</small>
+             </div>
+           </div>
+         
+       <button [disabled]="personalInfoForm.form.invalid || verificationHasError || genderHasError" class="btn btn-lg btn-primary btn-block" type="submit" >Next</button>
+ </form>
+ </div>
+
+ <pre>
+
+
+ </pre>

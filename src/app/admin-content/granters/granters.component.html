@@ -1,0 +1,74 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+      <h1 class="h2">Granter List</h1>
+    </div>
+  
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr >
+              <th >SL</th>
+             
+              <th >First Name</th>
+              <th >Last Name</th>
+              <th >Father's Name</th>
+              <th >Mother's Name</th>
+              <th >Present Address</th>
+              <th >Permanent Address</th>
+              <th>Gender</th>
+              <th>Religion</th>
+              <th>Relation</th>
+              <th>Occupation</th>
+              <th>Date of Birth</th>
+              <th>City</th>
+              <th>State</th>
+              <th>zip Code</th>
+              <th>Counter</th>
+              <th>Nationality</th>
+              <th>Mobile</th>
+              <th>Email</th>
+              <th>Verification Type</th>
+              <th>Verification No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of granterList;let i = index">
+              <td>{{i+1}}</td>
+             
+              <td>{{item.granter.firstName}}</td>
+              <td>{{item.granter.lastName}}</td>
+              <td>{{item.granter.fatherName}}</td>
+              <td>{{item.granter.motherName}}</td>
+              <td>{{item.granter.presentAddress}}</td>
+              <td>{{item.granter.permanentAddress}}</td>
+              <td>{{item.granter.gender}}</td>
+              <td>{{item.granter.religion}}</td>
+              <td>{{item.granter.relation}}</td>
+              <td>{{item.granter.occupation}}</td>
+              <td>{{item.granter.dateOfBirth | date:'shortDate'}}</td>
+              <td>{{item.granter.city}}</td>
+              <td>{{item.granter.state}}</td>
+              <td>{{item.granter.zipCode}}</td>
+              <td>{{item.granter.country}}</td>
+              <td>{{item.granter.nationality}}</td>
+              <td>{{item.granter.mobile}}</td>
+              <td>{{item.granter.emailAddress}}</td>
+              <td>{{item.granter.verification.verificationType}}</td>
+              <td>{{item.granter.verification.verificationCode}}</td>
+           
+            </tr>         
+          </tbody>
+        </table>
+  
+        
+      <pre>
+  
+  
+  
+  
+      </pre>
+      </div>
+  
+  
+  </main>
+  

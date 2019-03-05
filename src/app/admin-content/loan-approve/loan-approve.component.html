@@ -1,0 +1,71 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1>Loan Approval Details</h1>   
+  </div>
+
+
+  <form #approvalForm="ngForm" (ngSubmit)="onSubmit()">
+ <!-- {{approvalForm.value | json}} -->
+  <div class="form-row">
+    <div class="form-group col-md-3 mb-3">
+        <label class="font-weight-bold">Operate By :</label>
+        <select  class="form-control" style="height:52px" (blur)="validate(operateBy.value)" (change)="validate(operateBy.value)" required
+        ngModel #operateBy="ngModel" name="operateBy" 
+        [(ngModel)]="approvalModel.operateBy" [class.is-invalid]="operatorHasError && operateBy.touched">   
+        <option selected value="default" > Select an Opertor </option> 
+          
+        <option *ngFor="let item of loanOperators" value={{item.users.id}} >    
+            {{item.users.firstName}}  {{item.users.lastName}} 
+        </option> 
+        </select>  
+        <small  class="text-danger" [class.d-none]="!operatorHasError || operateBy.untouched">*Please Select an Operator</small> 
+    </div>
+
+    <div class="form-group col-md-3 mb-3">
+      <label class="font-weight-bold">Approve By :</label>
+      <select  class="form-control" style="height:52px" (blur)="validate1(approveBy.value)" (change)="validate1(approveBy.value)" required
+      ngModel #approveBy="ngModel" name="approveBy" 
+      [(ngModel)]="approvalModel.approveBy" [class.is-invalid]="approvarHasError && approveBy.touched">   
+      <option selected value="default" > Select an Approver </option> 
+        
+      <option *ngFor="let item of loanApprover" value={{item.users.id}} >    
+          {{item.users.firstName}}  {{item.users.lastName}} 
+      </option> 
+      </select>  
+      <small  class="text-danger" [class.d-none]="!approvarHasError || approveBy.untouched">*Please Select an Approver</small> 
+  </div>
+
+  <div class="form-group col-md-3 mb-3">
+    <label class="font-weight-bold">Status :</label>
+    <select  class="form-control" style="height:52px" (blur)="validate2(status.value)" (change)="validate2(status.value)" required
+    ngModel #status="ngModel" name="status" 
+    [(ngModel)]="approvalModel.status" [class.is-invalid]="statusHasError && status.touched">   
+    <option selected value="default" > Select status </option> 
+      
+    <option *ngFor="let item of statusArray">    
+        {{item}} 
+    </option> 
+    </select>  
+    <small  class="text-danger" [class.d-none]="!statusHasError || status.untouched">*Please Select Loan Status</small> 
+</div>
+
+<div class="form-group col-md-3 mb-3">
+  <label class="font-weight-bold">IssueDate :</label>
+  <input type="date"  class="form-control" style="height:52px" 
+  ngModel [(ngModel)]="approvalModel.issueDate" #issueDate="ngModel" name="issueDate" required>
+  
+  <small [class.d-none]="issueDate.valid || issueDate.untouched"  class="text-danger">*Please Select IssueDate</small> 
+</div>
+
+
+    
+   
+</div>
+        
+        <button  [disabled]="approvalForm.form.invalid || operatorHasError || approvarHasError || statusHasError" class="btn btn-lg btn-primary btn-block">Submit</button>
+        <br>
+  </form>  
+
+
+
+</main>

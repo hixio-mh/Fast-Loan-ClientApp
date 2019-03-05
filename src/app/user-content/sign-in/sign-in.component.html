@@ -1,0 +1,42 @@
+
+  <div class="text-center">
+    <form class="form-signin" #loginForm="ngForm" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+      <img class="mb-8" src="assets/img/loan.svg" alt="" width="200" height="200" >
+      <h1 class="h3 mb-3 font-weight-normal">Fast Loan</h1>
+      <div *ngIf="isLoginError" class="text-danger">
+          Incorrect Username or Password
+        </div>
+      <label for="inputUserName" class="sr-only">User Name</label>
+      <input type="text" id="inputUserName" class="form-control" placeholder="User Name" #UserName ngModel name="UserName" required autofocus>
+      <br>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" #Password ngModel name="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+      <button class="btn btn-lg btn-danger btn-block" routerLink='/signup'>Sign Up</button>
+ 
+      <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+      <table border="1">
+        <tr>
+          <td>User Name</td><td>Password</td><td>Role</td>
+        </tr>
+        <tr>
+          <td>rakib</td><td>1234</td><td>Admin</td>
+        </tr>
+        <tr>
+          <td>noman</td><td>1234</td><td>Manager</td>
+        </tr>
+        <tr>
+          <td>iqbal</td><td>1234</td><td>Manager</td>
+        </tr>
+  
+      </table>
+    </form>
+   
+    
+  </div>

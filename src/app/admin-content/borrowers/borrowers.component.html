@@ -1,0 +1,71 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Borrowers List</h1>
+  </div>
+
+  <div class="table-responsive">
+      <table class="table table-hover">
+          <thead>
+          <tr >
+            <th >SL</th>
+           
+            <th >First Name</th>
+            <th >Last Name</th>
+            <th >Father's Name</th>
+            <th >Mother's Name</th>
+            <th >Present Address</th>
+            <th >Permanent Address</th>
+            <th>Gender</th>
+            <th>Religion</th>
+            <th>Occupation</th>
+            <th>Date of Birth</th>
+            <th>City</th>
+            <th>State</th>
+            <th>zip Code</th>
+            <th>Counter</th>
+            <th>Nationality</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Verification Type</th>
+            <th>Verification No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of borrowerList;let i = index">
+            <td>{{i+1}}</td>
+           
+            <td>{{item.user.firstName}}</td>
+            <td>{{item.user.lastName}}</td>
+            <td>{{item.user.fatherName}}</td>
+            <td>{{item.user.motherName}}</td>
+            <td>{{item.user.presentAddress}}</td>
+            <td>{{item.user.permanentAddress}}</td>
+            <td>{{item.user.gender}}</td>
+            <td>{{item.user.religion}}</td>
+            <td>{{item.user.occupation}}</td>
+            <td>{{item.user.dateOfBirth | date:'shortDate'}}</td>
+            <td>{{item.user.city}}</td>
+            <td>{{item.user.state}}</td>
+            <td>{{item.user.zipCode}}</td>
+            <td>{{item.user.country}}</td>
+            <td>{{item.user.nationality}}</td>
+            <td>{{item.user.mobile}}</td>
+            <td>{{item.user.emailAddress}}</td>
+            <td>{{item.user.verification.verificationType}}</td>
+            <td>{{item.user.verification.verificationCode}}</td>
+         
+          </tr>         
+        </tbody>
+      </table>
+
+      
+    <pre>
+
+
+
+
+    </pre>
+    </div>
+
+
+</main>

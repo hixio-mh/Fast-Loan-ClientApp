@@ -1,0 +1,48 @@
+
+  <div class="text-center">
+    <form class="form-signin" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+        <img class="mb-8" src="assets/img/loan.svg" alt="" width="200" height="200" >
+      <h1 class="h3 mb-3 font-weight-normal">Fast Loan</h1>
+      <div>
+          <!-- <div class="alert alert-success" *ngIf="alert">
+              <strong> <i class="far fa-check-circle"></i>You have Successfully Registered</strong> 
+            </div> -->
+      <label for="inputUserName" class="sr-only">User Name</label>
+      <input  type="text" id="inputUserName" class="form-control" placeholder="User Name" 
+            name="UserName" #UserName="ngModel"  [class.is-invalid]="UserName.is-invalid && UserName.touched" 
+            [(ngModel)]="user.UserName" required autofocus>
+      <small class="text-danger" [class.d-none]="UserName.valid || UserName.untouched">*Name is required</small>  
+      <br>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input  type="password" id="inputPassword" class="form-control" placeholder="Password" 
+      name="Password" #Password="ngModel" [class.is-invalid]="Password.is-invalid && Password.touched"
+      [(ngModel)]="user.Password" required minlength="4">
+      <small class="text-danger" [class.d-none]="Password.valid || Password.untouched">*Password needs at least 4 characters</small>
+      </div>
+      <br>
+      <div>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input  type="email" id="inputEmail" class="form-control" placeholder="Email" 
+        required name="Email" #Email="ngModel" [class.is-invalid]="Email.is-invalid && Email.touched && Email.emailPattern"
+        [(ngModel)]="user.Email" [pattern]="emailPattern"> 
+        <small class="text-danger" [class.d-none]="Email.valid || Email.untouched">*Email is required</small>
+        <br>
+      </div>
+      <div>
+      <label for="inputfn" class="sr-only">Fast Name</label>
+      <input type="text" id="inputfn" class="form-control" placeholder="First Name" 
+      required name="FirstName" #FirstName="ngModel" [class.is-invalid]="FirstName.is-invalid && FirstName.touched"
+      [(ngModel)]="user.FirstName">
+      <small class="text-danger" [class.d-none]="FirstName.valid || FirstName.untouched">*First Name is required</small>
+      <br>
+      <label for="inputln" class="sr-only">Last Name</label>
+      <input type="text" id="inputln" class="form-control" placeholder="Last Name" 
+      required name="LastName" #LastName="ngModel" [class.is-invalid]="LastName.is-invalid && LastName.touched" 
+      [(ngModel)]="user.LastName">
+      <small class="text-danger" [class.d-none]="LastName.valid || LastName.untouched">*Last Name is required</small>
+      <br>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block"  [disabled]="!userRegistrationForm.valid" type="submit">Sign Up</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+    </form> 
+  </div>

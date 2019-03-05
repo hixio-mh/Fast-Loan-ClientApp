@@ -1,0 +1,51 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1>Employee List</h1>   
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr >
+          <th >SL</th>
+         
+          <th >First Name</th>
+          <th >Last Name</th>
+          <th >Email</th>
+          <th >User Name</th>
+          <th >Role</th>
+          <th >Change Role</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of userList;index as i">
+        <tr>
+            
+          <td>{{(i+1)}}</td>
+          <td>{{item.users.firstName}}</td>
+          <td>{{item.users.lastName}}</td>
+          <td>{{item.users.email}}</td>
+          <td>{{item.users.userName}}</td>
+          <td>{{item.roles.name}}</td>
+          <td>
+            <div class="form-group">
+              <select #selectRole class="form-control">
+                <option value="User">User</option>
+                <option value="Manager">Manager</option>
+                <option value="Admin"> Admin</option>
+              </select>
+            </div>
+            </td>
+          <td >
+          <button  [disabled]="!admin" class="btn btn-primary" (click)="addRole(selectRole.value,item)" style="color:white"> Assign Role</button> 
+          </td>
+          <td>
+          <button  [disabled]="!admin" class="btn btn-danger" (click)="delete(item)" style="color:white">Delete</button> 
+          </td>
+
+        </tr>         
+      </tbody>
+    </table>
+  </div>
+
+</main>

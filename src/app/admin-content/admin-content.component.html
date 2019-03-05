@@ -1,0 +1,184 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"> <img src="assets/img/loan.svg" style="height:30px;">Fast Loan</a>
+  <!-- <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+      
+    </li> <a href="#" routerLink="/home"> Back to Home</a>
+  </ul> -->
+    <button class="btn btn-sm btn-outline-secondary" style="margin-right:20px;text-align: center" href="#" (click)="logOut()" > 
+      <span><i class="fas fa-sign-out-alt"></i></span>Log Out</button>
+
+</nav>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" routerLink="/admin/dashboard" style="margin-left: 12px">
+                <span ><i class="fas fa-home"></i></span>
+                Dashboard <span class="sr-only">(current) </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/loan-application" style="width:300px;text-align: left">
+                <span ><i class="fab fa-wpforms"></i></span>
+                 Loan Applications 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/loans" style="width:300px;text-align: left">
+                <span ><i class="fas fa-landmark"></i></span>
+                Loans
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/borrowers" style="width:300px;text-align: left">
+                <span ><i class="fas fa-user-tie"></i></span>
+                Borrowers
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/granters" style="width:300px;text-align: left">
+                <span ><i class="fas fa-address-card"></i></span>
+                Granters
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/collections" style="width:300px;text-align: left">
+                <span ><i class="fas fa-hand-holding-usd"></i></span>
+                Collections
+              </a>
+            </li>
+          </ul>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>--------------------------</span>
+            <a class="d-flex align-items-center text-muted" href="#" routerLink="/admin/dashboard">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/employee" style="width:300px;text-align: left">
+                <span ><i class="fas fa-users"></i></span>
+                Employee List
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/admin/user" style="width:300px;text-align: left">
+                <span ><i class="fas fa-user-circle 3x"></i></span>
+                User List
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="btn btn-light" href="#" routerLink="/home" style="width:300px;text-align: left">
+                <span ><i class="fab fa-accusoft"></i></span>
+               Home
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+      
+
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" routerLink="/admin/dashboard">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
+  
+    <router-outlet></router-outlet>
+   
+  </div>
+</div> -->
+
+
+
+
+
+

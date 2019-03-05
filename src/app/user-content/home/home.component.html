@@ -1,0 +1,446 @@
+
+<br>
+<nav class="navbar  navbar-light bg-light  container" id="top">
+  <div style=" margin-left: 20px">
+      <a class="navbar-brand" href="#home"> <img src="assets/img/loan.svg" style="height:70px;"><span><h3>Fast Loan</h3></span></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#product">Loan Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a [class.d-none]="user" class="nav-link" href="#" routerLink="/admin">Dashboard</a>
+      </li>
+    </ul>
+    <div class="btn-group dropright">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/profile"><span><i class="fas fa-users"></i></span> Profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" (click)="logOut()" > <span><i class="fas fa-sign-out-alt"></i></span>Log Out</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<!-- ----------------------------nav bar ends----------------------------------- -->
+<br>
+<div class="container" id="home">
+  <div class="jumbotron jimg">
+    <h1 id="jh">Fast Loan</h1>
+    <p id="jp">Our goal at Borrow Loan Company is to provide access to personal loans and education loan, <br>
+      car loan, home loan at insight competitive interest rates lorem ipsums. We are the loan provider,<br>
+       you can use our loan product.</p>
+    <hr class="my-4">
+    
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" routerLink="/form1"  role="button">Apply for Loan</a>
+    </p>
+  </div>
+</div>
+
+<!-- ----------------------------Jumbotron ends ----------------------------------- -->
+
+<br> <br>
+<div class="row" id="product">
+    <div class="offset-xl-2 col-xl-8 offset-md-2 col-md-8 offset-md-2 col-md-8 col-sm-12 col-12">
+        <div class="text-center">
+            <!-- section title start-->
+            <h1 class="text-muted"> Find Loan Products We Offers</h1>
+            <p class="text-muted"> We will match you with a loan program that meet your financial need. In short term liquidity, by striving to make funds available to them <strong>within 24 hours of application.</strong></p>
+        </div>
+        <!-- /.section title start-->
+    </div>
+</div>
+
+<div class="container myCard">
+    <div class="card" style="width: 18rem;">
+      <br>
+        <img class="card-img-center" src="assets/img/loan.svg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Personal Loan</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" routerLink="/form1" class="btn btn-primary">Apply</a>
+        </div>
+      </div> <br>
+      <div class="card" style="width: 18rem;">
+        <br>
+          <img class="card-img-center" src="assets/img/car.svg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Car Loan</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" routerLink="/form1" class="btn btn-primary">Apply</a>
+          </div>
+        </div> <br>
+        <div class="card" style="width: 18rem;">
+          <br>
+            <img class="card-img-center" src="assets/img/credit-card.svg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Education Loan</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" routerLink="/form1" class="btn btn-primary">Apply</a>
+            </div>
+          </div> <br>
+          <div class="card" style="width: 18rem;">
+            <br>
+              <img class="card-img-center" src="assets/img/mortgage.svg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Home Loan</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" routerLink="/form1" class="btn btn-primary">Apply</a>
+              </div>
+            </div>
+</div>
+
+<!--------------------------------- cards ends----------------------- -->
+<br> <br>
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/img/slider-2.jpg" alt="Second slide" style="height:80vh">
+            
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/slider-3.jpg" alt="Third slide" style="height:80vh">
+            
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/a.jpg" alt="Third slide" style="height:80vh">
+            
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br> <br><br> <br>
+<hr>
+</div>
+<!--------------------------------- slider ends----------------------- -->
+
+
+<div class="row" id="about" >
+    <div class="offset-xl-2 col-xl-8 offset-md-2 col-md-8 offset-md-2 col-md-8 col-sm-12 col-12">
+        <div class="text-center">
+            <!-- section title start-->
+            <h1 class="text-muted"> Fast & Easy Application Process.</h1>
+            <p class="text-muted">Suspendisse aliquet varius nunc atcibus lacus sit amet coed portaeri sque mami luctus viveed congue lobortis faucibus</p>
+        </div>
+        <!-- /.section title start-->
+    </div>
+</div>
+
+<div class="container myCard1">
+    <div class="card" style="width: 18rem;">
+      <br>
+      <h1 class="text-center text-muted">1</h1>
+        <div class="card-body text-center">
+          <h5 class="card-title-center">Choose Loan Amount</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          
+        </div>
+      </div> <br>
+      <div class="card" style="width: 18rem;">
+        <br>
+        <h1 class="text-center text-muted">2</h1>
+          <div class="card-body text-center">
+            <h5 class="card-title-center">Approved Your Loan</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+          </div>
+        </div> <br>
+        <div class="card" style="width: 18rem;">
+          <br>
+          <h1 class="text-center text-muted">3</h1>
+            <div class="card-body text-center">
+              <h5 class="card-title-center">Get Your Cash</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              
+            </div>
+       
+          </div> <br>
+
+          <br> <br>
+<hr>
+
+</div>
+
+
+
+
+<!-- ----------------------------Application Process ends ------------------------>
+
+<br> <br>
+<div class="container">
+  <div class="row">
+      <div class="offset-xl-2 col-xl-8 offset-md-2 col-md-8 offset-md-2 col-md-8 col-sm-12 col-12">
+          <div class="mb60 text-center section-title">
+              <!-- section title start-->
+              <h1>Why People Choose Us</h1>
+              <p>Suspendisse aliquet varius nunc atcibus lacus sit amet coed portaeri sque mami luctus viveed congue lobortis faucibus.</p>
+          </div>
+          <!-- /.section title start-->
+      </div>
+  </div>
+
+<div>
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="bg-white bg-boxshadow">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 nopadding">
+                    <div class="bg-white pinside60 number-block outline">
+                        <div class="mb20" hidden><i class="icon-cup icon-4x icon-primary "></i></div>
+                        <h3>Dedicated Specialists</h3>
+                        <p>Duis eget diam quis elit erdiet alidvolutp terdum tfanissim non intwesollis eu mauris.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 nopadding">
+                    <div class="bg-white pinside60 number-block outline">
+                        <div class="mb20" hidden><i class="icon-cup  icon-4x icon-primary"></i></div>
+                        <h3>Success Stories Rating</h3>
+                        <p>Integer facilisis fringilla dolor ut luctus lvinar felis miat velitliquam at fermentum orci.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 nopadding">
+                    <div class="bg-white pinside60 number-block outline">
+                        <div class="mb20" hidden><i class="icon-calculator  icon-4x icon-primary"></i></div>
+                        <h3>No front Appraisal Fees!</h3>
+                        <p> Integer faisis fringilla dolor ut luctus nisi eneinar felis viverra dignissim fermentum orci.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- -------------------------why people choose us------------------ -->
+<br> <br>
+<hr>
+
+<div class="bg-default section-space80">
+  <div class="container">
+      <div class="row">
+          <div class="offset-xl-2 col-xl-8 offset-md-2 col-md-8 offset-md-2 col-md-8 col-sm-12 col-12">
+              <div class="mb60 text-center section-title">
+                  <!-- section title start-->
+                  <h1 class="title-white">Some of our Awesome Testimonials</h1>
+                  <p> You won’t be the only one lorem ipsu mauris diam mattises.</p>
+              </div>
+              <!-- /.section title start-->
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 clearfix ">
+              <div class="testimonial-block mb30">
+                  <div class="bg-white pinside30 mb20">
+                      <p class="testimonial-text"> “I loved the customer service you guys provided me. That was very nice and patient with questions I had. I would really like definitely come back here”</p>
+                  </div>
+                  <div class="testimonial-autor-box">
+                      <div class="testimonial-img pull-left"> <img src="assets/img/testimonial-img.jpg" alt="Borrow - Loan Company Website Template"> </div>
+                      <div class="testimonial-autor pull-left">
+                          <h4 class="testimonial-name">Donny J. Griffin</h4>
+                          <span class="testimonial-meta">Personal Loan</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 clearfix ">
+              <div class="testimonial-block mb30">
+                  <div class="bg-white pinside30 mb20">
+                      <p class="testimonial-text"> “I had a good experience with Insight Loan Services. I am thankful to insight for the help you guys gave me. My loan was easy and fast. thank you Insigtht”</p>
+                  </div>
+                  <div class="testimonial-autor-box">
+                      <div class="testimonial-img pull-left"> <img src="assets/img/testimonial-img-1.jpg" alt="Borrow - Loan Company Website Template"> </div>
+                      <div class="testimonial-autor pull-left">
+                          <h4 class="testimonial-name">Mary O. Randle</h4>
+                          <span class="testimonial-meta">Education Loan</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 clearfix ">
+              <div class="testimonial-block mb30">
+                  <div class="bg-white pinside30 mb20">
+                      <p class="testimonial-text"> “We came out of their offices very happy with their service. They treated us very kind. Definite will come back. The waiting time was very appropriate.”</p>
+                  </div>
+                  <div class="testimonial-autor-box">
+                      <div class="testimonial-img pull-left"> <img src="assets/img/testimonial-img-2.jpg" alt="Borrow - Loan Company Website Template"> </div>
+                      <div class="testimonial-autor pull-left">
+                          <h4 class="testimonial-name">Lindo E. Olson</h4>
+                          <span class="testimonial-meta">Car Loan</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<br> <br>
+<hr>
+<div class="section-space40 bg-white">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-1.jpg" alt="Borrow - Loan Company Website Template"> </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-2.jpg" alt="Borrow - Loan Company Website Template"> </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-3.jpg" alt="Borrow - Loan Company Website Template"> </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-4.jpg" alt="Borrow - Loan Company Website Template"> </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-5.jpg" alt="Borrow - Loan Company Website Template"> </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6"> <img src="assets/img/logo-1.jpg" alt="Borrow - Loan Company Website Template"> </div>
+      </div>
+  </div>
+</div>
+<!-- --------------------------------Testimonial ends ------------------------->
+
+<br> <br>
+<hr>
+
+<div class="section-space80">
+  <div class="container">
+      <div class="row">
+          <div class="offset-xl-2 col-xl-8 offset-md-2 col-md-8 offset-md-2 col-md-8 col-sm-12 col-12">
+              <div class="mb60 text-center section-title">
+                  <!-- section title start-->
+                  <h1>Latest News from Loan Company</h1>
+                  <p> Our mission is to deliver reliable, latest news and opinions.</p>
+              </div>
+              <!-- /.section title start-->
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="post-block mb30">
+                  <div class="post-img">
+                      <img src="assets/img/blog-img.jpg" alt="Borrow - Loan Company Website Template" class="img-fluid">
+                  </div>
+                  <div class="bg-white pinside40 outline">
+                      <h2><p class="title btn-link">Couples Buying New Home Loan</p></h2>
+                      <p class="meta"><span class="meta-date">Aug 25, 2017</span><span class="meta-author">By<p class="btn-link"> Admin</p></span></p>
+                      <p>Fusce sed erat libasellus id orci quis ligula pret do lectus velit, a malesuada urna sodales eu.</p>
+                      <p class="btn-link" >Read More</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="post-block mb30">
+                  <div class="post-img">
+                      <img src="assets/img/blog-img-1.jpg" alt="Borrow - Loan Company Website Template" class="img-fluid">
+                  </div>
+                  <div class="bg-white pinside40 outline">
+                      <h2><p class="title btn-link">Business Man Thinking for Loan</p></h2>
+                      <p class="meta"><span class="meta-date">Aug 24, 2017</span><span class="meta-author">By<p class="btn-link"> Admin</p></span></p>
+                      <p>Nulla vehicula nibh vel malesuada dapibus ringilla nunc mi sit amet fbendum sapierttitor. </p>
+                      <p class="btn-link" >Read More</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="post-block mb30">
+                  <div class="post-img">
+                     <img src="assets/img/blog-img-2.jpg" alt="Borrow - Loan Company Website Templates" class="img-fluid">
+                  </div>
+                  <div class="bg-white pinside40 outline">
+                      <h2><p  class="title btn-link">Are you students looking for loan ?</p></h2>
+                      <p class="meta"><span class="meta-date">Aug 23, 2017</span><span class="meta-author">By<p class="btn-link"> Admin</p></span></p>
+                      <p>Malesuada urna sodales euusce sed erat libasellus id orci quis ligula pretium co ctus velit.</p>
+                      <p class="btn-link" >Read More</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- --------------------------------Testimonial ends ------------------------->
+
+<br> <br>
+<hr>
+
+<div >
+  <!-- footer -->
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="footer-logo">
+                  <!-- Footer Logo -->
+                 <img src="assets/img/loan.svg" alt="Borrow - Loan Company Website Templates"> <h3>Fast Loan</h3>
+              </div>
+              <!-- /.Footer Logo -->
+          </div>
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div class="row">
+                  <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                      <h3 class="newsletter-title">Signup Our Newsletter</h3>
+                  </div>
+                  <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                      <div class="newsletter-form">
+                          <!-- Newsletter Form -->
+                          <form action="newsletter.php" method="post">
+                              <div class="input-group">
+                                  <input type="email" class="form-control" id="newsletter" name="newsletter" placeholder="Write E-Mail Address" required>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-default" type="submit">Go!</button>
+                                  </span>
+                              </div>
+                              <!-- /input-group -->
+                          </form>
+                      </div>
+                      <!-- /.Newsletter Form -->
+                  </div>
+              </div>
+              <!-- /.col-lg-6 -->
+          </div>
+      </div>
+      <hr class="dark-line">
+      <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div>
+                  <!-- widget text -->
+                  <p>Our goal at Borrow Loan Company is to provide access to personal loans and education loan, car loan, home loan at insight competitive interest rates lorem ipsums. We are the loan provider, you can use our loan product.</p>
+              </div>
+              <!-- /.widget text -->
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /.footer -->
+<div class="tiny-footer">
+  <!-- tiny footer -->
+  <div class="container">
+      <div class="row" >
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+              <p>© Copyright 2016     |   Borrow Loan Company     |  Terms of use     |   Privacy Policy</p>
+          </div>
+      </div>
+  </div>
+</div>
+

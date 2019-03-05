@@ -1,0 +1,256 @@
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1>Loan Applications Details</h1>   
+  </div>
+  <button [disabled]="!admin" class="btn btn-success"  (click)="approve()">Loan Approve</button> 
+  <button  [disabled]="!admin" class="btn btn-danger" style="width:176px;margin-left:10px" (click)="delete()">Delete</button>
+
+<div>
+    <br>
+    <h2> Loan Info</h2>
+<br>
+      <div class="table-responsive">
+          <table class="table table-hover">
+              <thead>
+              <tr >
+                <th >ID</th>
+                <th >Loan Type</th>
+                <th >Amount</th>
+                <th >Installments</th>
+                
+              </tr>
+            </thead>
+            <tbody  *ngFor="let item of applications" >
+              <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                <td >{{item.loanApplicationId}}</td>
+                <td >{{item.loanType}}</td>
+                <td >{{item.loanAmount}}</td>
+                <td >{{item.installments}}</td>
+              </tr>  
+              <tr></tr>     
+            </tbody>
+          </table>
+        </div>      
+  </div>
+<br>
+  <div>
+      <h2> Personal Info</h2>
+  <br>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr >
+                  <th >First Name</th>
+                  <th >Last Name</th>
+                  <th >Father's Name</th>
+                  <th >Mother's Name</th>
+                  <th >Email</th>
+                  <th >Mobile</th>
+                  <th >Gender</th>  
+                </tr>
+              </thead>
+              <tbody  *ngFor="let item of applications" >
+                <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                  <td >{{item.granterFirstName}}</td>
+                  <td >{{item.granterLastName}}</td>
+                  <td >{{item.granterFatherName}}</td>
+                  <td >{{item.granterMotherName}}</td>
+                  <td >{{item.granterEmailAddress}}</td>
+                  <td >{{item.granterMobile}}</td>
+                  <td >{{item.granterGender}}</td>
+                </tr>  
+                <tr></tr>     
+              </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <br>
+
+    <div>
+      <br>
+
+      <div class="table-responsive">
+          <table class="table table-hover">
+              <thead>
+              <tr >
+                <th >Present Address</th>
+                <th >Permanent Address</th>
+                <th >Date of Birth</th> 
+                <th >Country</th>
+                <th >State</th>
+                <th >City</th>
+                <th >Zip Code</th>
+                 
+              </tr>
+            </thead>
+            <tbody  *ngFor="let item of applications" >
+              <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                <td >{{item.granterPresentAddress}}</td>
+                <td >{{item.granterPermanentAddress}}</td>
+                <td >{{item.granterDateOfBirth}}</td>
+                <td >{{item.granterCountry}}</td>
+                <td >{{item.granterState}}</td>
+                <td >{{item.granterCity}}</td>
+                <td >{{item.granterZipCode}}</td>
+              </tr>  
+              <tr></tr>     
+            </tbody>
+          </table>
+      </div>
+
+    </div>
+
+    <br>
+
+
+    
+    <div>
+        <br>
+  
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr >
+                  <th >Occupation</th>
+                  <th >Religion</th>
+                  <th >Nationality</th> 
+                  <th >Verification Type</th>
+                  <th >VerificationCode</th>                   
+                </tr>
+              </thead>
+              <tbody  *ngFor="let item of applications" >
+                <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                  <td >{{item.granterOccupation}}</td>
+                  <td >{{item.granterReligion}}</td>
+                  <td >{{item.granterNationality}}</td>
+                  <td >{{item.granterVerificationType}}</td>
+                  <td >{{item.granterVerificationCode}}</td>
+               
+                </tr>  
+                <tr></tr>     
+              </tbody>
+            </table>
+        </div>
+  
+    </div>
+
+<br>
+<br>
+
+    <div>
+        <h2> Granter Info</h2>
+    <br>
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                  <tr >
+                    <th >First Name</th>
+                    <th >Last Name</th>
+                    <th >Father's Name</th>
+                    <th >Mother's Name</th>
+                    <th >Email</th>
+                    <th >Mobile</th>
+                    <th >Gender</th>  
+                  </tr>
+                </thead>
+                <tbody  *ngFor="let item of applications" >
+                  <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                    <td >{{item.granterFirstName}}</td>
+                    <td >{{item.granterLastName}}</td>
+                    <td >{{item.granterFatherName}}</td>
+                    <td >{{item.granterMotherName}}</td>
+                    <td >{{item.granterEmailAddress}}</td>
+                    <td >{{item.granterMobile}}</td>
+                    <td >{{item.granterGender}}</td>
+                  </tr>  
+                  <tr></tr>     
+                </tbody>
+              </table>
+          </div>
+
+          <br>
+          
+      </div>
+  
+      <div>
+        <br>
+  
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr >
+                  <th >Present Address</th>
+                  <th >Permanent Address</th>
+                  <th >Date of Birth</th> 
+                  <th >Country</th>
+                  <th >State</th>
+                  <th >City</th>
+                  <th >Zip Code</th>
+                   
+                </tr>
+              </thead>
+              <tbody  *ngFor="let item of applications" >
+                <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                  <td >{{item.granterPresentAddress}}</td>
+                  <td >{{item.granterPermanentAddress}}</td>
+                  <td >{{item.granterDateOfBirth}}</td>
+                  <td >{{item.granterCountry}}</td>
+                  <td >{{item.granterState}}</td>
+                  <td >{{item.granterCity}}</td>
+                  <td >{{item.granterZipCode}}</td>
+                </tr>  
+                <tr></tr>     
+              </tbody>
+            </table>
+        </div>
+        <br>
+  
+      </div>
+  
+  
+      
+      <div>
+          <br>
+    
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                  <tr >
+                    <th >Occupation</th>
+                    <th >Religion</th>
+                    <th >Relation</th>
+                    <th >Nationality</th> 
+                    <th >Verification Type</th>
+                    <th >VerificationCode</th>                   
+                  </tr>
+                </thead>
+                <tbody  *ngFor="let item of applications" >
+                  <tr *ngIf="loanApplicationId==item.loanApplicationId" >
+                    <td >{{item.granterOccupation}}</td>
+                    <td >{{item.granterReligion}}</td>
+                    <td >{{item.granterRelation}}</td>
+                    <td >{{item.granterNationality}}</td>
+                    <td >{{item.granterVerificationType}}</td>
+                    <td >{{item.granterVerificationCode}}</td>
+                 
+                  </tr>  
+                  <tr></tr>     
+                </tbody>
+              </table>
+          </div>
+    
+      </div>
+
+      <pre>
+
+
+
+      </pre>
+
+
+
+</main>
+

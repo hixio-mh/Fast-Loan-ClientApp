@@ -1,0 +1,60 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+      <h1 class="h2">Loans</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr >
+              <th >SL</th>
+             
+              <th >Loan ID</th>
+              <th >Loan Type</th>
+              <th >Loan Amount</th>
+              <th >EMI</th>
+              <th >Interest Rate(%)</th>
+              
+              <th >Issued Date</th>
+             
+              <th>Instalments Detail</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of loanList;let i = index">
+              <td>{{i+1}}</td>
+             
+              <td>{{item.loanId}}</td>
+              <td>{{item.loanType.loanTypeName}}</td>
+              <td>{{item.loanType.loanAmount}}</td>
+              <td>{{item.loanInstallments[0].emi | number:'1.2-3'}}</td>
+              <td>{{item.loanType.interestRate}}</td>
+              <td>{{item.issueDate  | date:'shortDate'}}</td>
+              <td>
+                  <a class="btn btn-success" (click)="detail(item)" style="color:white">Details</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" (click)="delete(item)" style="color:white">Delete</a>
+            </td>
+    
+            </tr>         
+          </tbody>
+        </table>
+
+        
+      <pre>
+
+
+
+
+
+
+
+
+        
+      </pre>
+      </div>
+
+
+  </main>

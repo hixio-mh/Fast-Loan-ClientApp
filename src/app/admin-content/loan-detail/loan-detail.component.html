@@ -1,0 +1,51 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Installments Details</h1>
+  </div>
+
+  <div class="table-responsive">
+      <table class="table table-hover">
+          <thead>
+          <tr >
+            <th >SL</th>
+           
+            <th >Installment ID</th>
+            <th >EMI</th>
+            <th >Schedule Date</th>
+            <th >Actual Pay Date</th>
+            <th >Penalty</th>
+            <th> Pay Amount</th>
+            <th>Reason</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of installmentList;let i = index">
+            <td>{{i+1}}</td>
+           
+            <td>{{item.loanInstallmentId}}</td>
+            <td>{{item.emi | number:'1.2-3'}}</td>
+            <td>{{item.scheduleDate | date:'shortDate'}}</td>
+            <td>{{item.actualPayDate | date:'shortDate'}}</td>
+            <td>{{item.penalty | number:'1.2-3'}}</td>
+            <td>{{item.payAmount | number:'1.2-3'}}</td>
+            <td>{{item.reason}}</td>
+            <td>
+                <!-- <a class="btn btn-success" (click)="detail(item)" style="color:white">Details</a> -->
+            </td>
+  
+          </tr>         
+        </tbody>
+      </table>
+
+      
+    <pre>
+
+
+
+      
+    </pre>
+    </div>
+
+
+</main>

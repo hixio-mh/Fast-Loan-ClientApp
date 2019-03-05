@@ -1,0 +1,66 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+      <h1 class="h2">Payment Collection Form</h1>
+    </div>
+  
+
+    <form #paymentForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="loanId" class="font-weight-bold">Loan Id : </label>
+                <input type="number"  class="form-control" required  name="loanId" min="1"
+                [(ngModel)]="paymentModel.loanId" #loanId="ngModel" [class.is-invalid]="loanId.invalid && loanId.touched" >
+                <small class="text-danger" [class.d-none]="loanId.valid || loanId.untouched">*Loan Id is required</small>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label for="installmentId" class="font-weight-bold">Installment Id : </label>
+                <input type="number"  class="form-control" required  name="installmentId" min="1"
+                [(ngModel)]="paymentModel.installmentId" #installmentId="ngModel" [class.is-invalid]="installmentId.invalid && installmentId.touched" >
+                <small class="text-danger" [class.d-none]="installmentId.valid || installmentId.untouched">*Installment Id is required</small>
+            </div>
+        </div>
+ 
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="paymentDate" class="font-weight-bold">Payment Date: </label>
+                <input type="date"  class="form-control" required name="paymentDate"
+                [(ngModel)]="paymentModel.paymentDate" #paymentDate="ngModel" [class.is-invalid]="paymentDate.invalid && paymentDate.touched" >
+
+                <small class="text-danger" [class.d-none]="paymentDate.valid || paymentDate.untouched">*Payment Date is required</small>
+            </div>
+
+           
+                <div class="form-group col-md-6">
+                    <label for="paidAmount" class="font-weight-bold">EMI Amount: </label>
+                    <input type="number"  class="form-control" required  name="emi" min="1"
+                    [(ngModel)]="paymentModel.emi" #emi="ngModel" [class.is-invalid]="emi.invalid && emi.touched" >
+
+                    <small class="text-danger" [class.d-none]="emi.valid || emi.untouched">*EMI is required</small>
+                </div>
+            
+        </div>
+        <div class="form-row">
+            
+            <div class="form-group col-md-6">
+                <label for="paidAmount" class="font-weight-bold">Penalty Amount: </label>
+                <input type="number"  class="form-control" required  name="penalty" min="1"
+                [(ngModel)]="paymentModel.penalty" #penalty="ngModel" [class.is-invalid]="penalty.invalid && penalty.touched" >
+                <small class="text-danger" [class.d-none]="penalty.valid || penalty.untouched">*Penalty Amount is required</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="reason" class="font-weight-bold">Reason (If Late Payment): </label>
+                <input type="text" class="form-control"  name="reason"
+                [(ngModel)]="paymentModel.reason" #reason="ngModel"  >
+
+         </div>
+        </div>
+
+       <button [disabled]="paymentForm.form.invalid " class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+
+            <br>
+        </form>  
+  </main>
+  

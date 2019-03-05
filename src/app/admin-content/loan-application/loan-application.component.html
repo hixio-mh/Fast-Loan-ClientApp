@@ -1,0 +1,38 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1>Loan Applications</h1>  
+  </div>
+
+  <div class="table-responsive">
+      <table class="table table-hover">
+          <thead>
+          <tr >
+            <th >ID</th>
+            <th >Loan Type</th>
+            <th >Amount</th>
+            <th >Installments</th>
+            <th >First Name</th>
+            <th >Last Name</th>
+            <th >Present Address</th>
+            <th >Mobile No</th>
+            <th >View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of applications">
+            <td>{{item.loanApplicationId}}</td>
+            <td>{{item.loanType}}</td>
+            <td>{{item.loanAmount}}</td>
+            <td>{{item.installments}}</td>
+            <td>{{item.userFirstName}}</td>
+            <td>{{item.userLastName}}</td>
+            <td>{{item.userPresentAddress}}</td>
+            <td>{{item.userMobile}}</td>
+            <!-- <td><a class="btn btn-primary" href="#" routerLink="/admin/loan-application-details">Details</a></td> -->
+            <td><a class="btn btn-primary" (click)="onSelect(item)" style="color:white">Details</a></td>
+
+          </tr>         
+        </tbody>
+      </table>
+    </div>
+</main>

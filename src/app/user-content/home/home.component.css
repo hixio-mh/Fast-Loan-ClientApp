@@ -1,0 +1,44 @@
+
+.d-block{
+    opacity: .80;
+    
+} 
+
+.myCard{
+   display: flex; 
+
+}
+
+.card{
+   margin-right: 30px;
+}
+
+.jimg{
+    background-image: url('/assets/img/b.png');
+    background-blend-mode: multiply;
+    
+    
+}
+#jp{
+    font-size: 21px;
+    color:whitesmoke;
+    font-weight: 300;
+   
+}
+#jh{
+    color: whitesmoke;
+}
+.card-img-top{
+height: 50px;
+width: 50px;
+}
+
+.myCard1{
+    display: flex; 
+    margin-right: 30px;
+    
+ }
+ 
+.tiny-footer{
+    background-color: aliceblue;
+}
